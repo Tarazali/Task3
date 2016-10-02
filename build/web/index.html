@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Reg Form</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form method = "post" action = "SignUpServlet">
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type ="text" name ="uname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td>
+                        <input type ="text" name ="sname">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Login:</td>
+                    <td>
+                        <input type ="text" name ="log">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type ="text" name ="pass">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td>
+                        <input type ="text" name ="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type ="submit" value ="SignUp">
+                    </td>
+                </tr>
+            </table>
+            
+            
+        </form>
+        
+        </br>
+        </br>
+            
+        <form method = "post" action = "SignInServlet">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type ="text" name="namein">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="text" name="passin">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="SignIn">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        
+    </body>
+</html>

@@ -40,13 +40,13 @@ public class SignUpServlet extends HttpServlet {
         String mylogin = request.getParameter("log");
         String password = request.getParameter("pass");
         String emailaddress = request.getParameter("email");
-        String driver = "com.mysq.jdbc.Driver";
+        String driver = "com.mysql.jdbc.Driver";
         try {
             Class.forName(driver);
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpit", "root", "");
             Statement stmt = conn.createStatement();
-            String query = " INSERT INTO users (id, name, surname, login, password, email) VALUES (NULL, \""+ username +"\", \""+ surname +"\", \""+ mylogin +"\", \""+ password +"\", \""+emailaddress+"\" ) ";
-            ResultSet rs = stmt.executeQuery(query);
+            String query = " INSERT INTO users (id, name, surname, login, password, email) VALUES (NULL, \" "+ username +" \", \""+ surname +"\", \""+ mylogin +"\", \""+ password +"\", \""+emailaddress+"\" ) ";
+            stmt.executeUpdate(query);
             
             HttpSession session = request.getSession(true);
                 session.setAttribute("name", username);

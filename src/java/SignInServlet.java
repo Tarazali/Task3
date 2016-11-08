@@ -42,13 +42,16 @@ public class SignInServlet extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/helpit", "root", "");
             Statement pst = con.createStatement();
-            String sqlquery = "select * from users where name = "+nameForIn+" password = "+passForIn;
+            String sqlquery = "select * from users where login = '"+nameForIn+"' AND password = '"+passForIn+"'";
             
              ResultSet rs = pst.executeQuery(sqlquery);
+             
             if(rs.next()){
                 out.println("Correct login!");
+                response.sendRedirect("WelcomeServlet");
             }else{
                 out.println("Incorrect!!!");
+                response.sendRedirect("index.html");
             }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SignInServlet.class.getName()).log(Level.SEVERE, null, ex);
